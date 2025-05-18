@@ -12,11 +12,11 @@ def receive_alert():
     data = request.get_json()
     message = data.get("message", "📈 New alert received!")
 
-    # ⛔️ Ignore synthetic ping messages
+    # Ignore synthetic ping messages
     if message == "🛠️ Keep-alive ping from Datadog Synthetic":
         return {"telegram_status": "ping skipped"}, 200
 
-    # ✅ Send all other messages
+    # Send all other messages
     telegram_url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
     payload = {"chat_id": CHAT_ID, "text": message}
     r = requests.post(telegram_url, json=payload)
