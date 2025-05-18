@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: tradingview-telegram
+    name: alert-to-telegram
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
@@ -9,3 +9,4 @@ services:
         sync: false
       - key: CHAT_ID
         sync: false
+
