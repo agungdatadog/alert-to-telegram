@@ -1,6 +1,9 @@
 import os
+
+# Force direct ingestion over HTTPS (no agent needed)
 os.environ["DD_TRACE_AGENT_URL"] = "https://trace.agent.datadoghq.com"
 os.environ["DD_API_KEY"] = os.getenv("DD_API_KEY")
+os.environ["DD_TRACE_API_VERSION"] = "v0.4"  # compatible with direct ingestion
 
 from ddtrace import patch_all
 patch_all()
