@@ -1,3 +1,10 @@
+import os
+os.environ["DD_TRACE_AGENT_URL"] = "https://trace.agent.datadoghq.com"
+os.environ["DD_API_KEY"] = os.getenv("DD_API_KEY")
+
+from ddtrace import patch_all
+patch_all()
+
 from flask import Flask, request
 import requests
 import os
