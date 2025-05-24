@@ -9,4 +9,7 @@ services:
         sync: false
       - key: CHAT_ID
         sync: false
-
+      - key: BOT2_TOKEN
+        sync: false
+      - key: BOT2_CHAT_ID
+        sync: false
