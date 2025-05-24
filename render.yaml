@@ -13,3 +13,14 @@ services:
         sync: false
       - key: BOT2_CHAT_ID
         sync: false
+      - key: DD_API_KEY       # Don't sync secrets
+        sync: false
+      - key: DD_ENV
+        value: render
+      - key: DD_SERVICE
+        value: alert-to-telegram
+      - key: DD_VERSION
+        value: v1
+      - key: DD_SITE
+        value: datadoghq.com
+
